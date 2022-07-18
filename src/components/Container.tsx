@@ -8,7 +8,7 @@ export const Container = (props: FlexProps) => {
 
   return (
     <Flex
-      direction="row"
+      direction="column"
       height={"100vh"}
       bg={bgColor[colorMode]}
       color={color[colorMode]}
