@@ -7,11 +7,25 @@ import { SeparatorContainer } from "./SeparatorContainer";
 
 interface MarkdownProcessorProps {
   children: string;
+  isVisible?: boolean;
+  onIconClick?: () => void;
+  showVisibleIcon?: boolean;
 }
 
-export const MarkdownProcessor = ({ children }: MarkdownProcessorProps) => {
+export const MarkdownProcessor = ({
+  children,
+  isVisible,
+  onIconClick,
+  showVisibleIcon,
+}: MarkdownProcessorProps) => {
   return (
-    <SeparatorContainer title="Prévia" p={"0.5rem"}>
+    <SeparatorContainer
+      title="Prévia"
+      p={"0.5rem"}
+      isVisible={isVisible}
+      onIconClick={onIconClick}
+      showVisibleIcon={showVisibleIcon}
+    >
       <ReactMarkdown
         skipHtml={false}
         remarkPlugins={[remarkGfm]}
