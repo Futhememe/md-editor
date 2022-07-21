@@ -52,7 +52,10 @@ const Home: NextPage = () => {
       <Flex h="100%">
         <EditorContainer
           isVisible={isEditorVisible}
-          onIconClick={() => {}}
+          onIconClick={() => {
+            setMarkdownVisible.on();
+            setEditorVisible.off();
+          }}
           showVisibleIcon={isBase}
           value={editorValue}
           onChange={(text) => setEditorValue(text ?? "")}
@@ -60,7 +63,10 @@ const Home: NextPage = () => {
         />
         <MarkdownProcessor
           isVisible={isMarkdownVisible}
-          onIconClick={() => {}}
+          onIconClick={() => {
+            setEditorVisible.on();
+            setMarkdownVisible.off();
+          }}
           showVisibleIcon={isBase}
         >
           {editorValue}
