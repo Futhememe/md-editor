@@ -28,7 +28,8 @@
     "remark-gfm": "^3.0.1",
     "remark-parse": "^10.0.1",
     "remark-rehype": "^10.1.0",
-    "unified": "^10.1.2"
+    "unified": "^10.1.2",
+    "zustand": "^4.0.0-rc.4"
   },
   "devDependencies": {
     "@types/node": "18.0.3",
