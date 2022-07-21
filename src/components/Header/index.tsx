@@ -74,7 +74,7 @@ export const Header = () => {
           <Text opacity={0.8} fontSize="0.75rem">
             NOME DO DOCUMENTO
           </Text>
-          <Editable value={documentName}>
+          <Editable defaultValue="document.md">
             <EditablePreview p="0" />
             <EditableInput
               p="0"
