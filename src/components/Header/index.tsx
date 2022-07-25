@@ -29,8 +29,11 @@ export const Header = () => {
     colorMode,
     isBase,
     documentName,
+    hoverColor,
+    icons,
     setDocumentName,
     normalizeDocumentName,
+    toggleColorMode,
   } = useHeader();
 
   return (
@@ -45,9 +48,9 @@ export const Header = () => {
         <Menu closeOnBlur>
           <MenuButton
             as={IconButton}
-            bgColor={"gray.200"}
+            bgColor={bgColor[colorMode]}
             _hover={{
-              bgColor: "gray.300",
+              bgColor: hoverColor[colorMode],
             }}
             icon={<HamburgerIcon />}
           />
@@ -88,11 +91,6 @@ export const Header = () => {
       </Flex>
       <Flex>
         <IconButton
-          aria-label="save"
-          colorScheme={"teal"}
-          icon={<DownloadIcon />}
-        />
-        {/* <IconButton
           bgColor={bgColor[colorMode]}
           _hover={{
             bgColor: hoverColor[colorMode],
@@ -100,7 +98,13 @@ export const Header = () => {
           aria-label="More"
           onClick={toggleColorMode}
           icon={icons[colorMode]}
-        /> */}
+          mr="1rem"
+        />
+        <IconButton
+          aria-label="save"
+          colorScheme={"teal"}
+          icon={<DownloadIcon />}
+        />
       </Flex>
     </Flex>
   );
