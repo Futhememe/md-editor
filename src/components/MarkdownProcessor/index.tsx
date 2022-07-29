@@ -2,8 +2,9 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { dracula, prism } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { SeparatorContainer } from "../SeparatorContainer";
+import { useColorMode } from "@chakra-ui/react";
 
 interface MarkdownProcessorProps {
   children: string;
@@ -18,6 +19,8 @@ export const MarkdownProcessor = ({
   onIconClick,
   showVisibleIcon,
 }: MarkdownProcessorProps) => {
+  const { colorMode } = useColorMode();
+
   return (
     <SeparatorContainer
       title="Prévia"
@@ -35,7 +38,7 @@ export const MarkdownProcessor = ({
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag="div"
-                style={dracula as any}
+                style={colorMode === "dark" ? dracula : prism}
               >
                 {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
