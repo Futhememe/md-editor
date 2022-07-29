@@ -27,6 +27,7 @@ export const SeparatorContainer = ({
   const { colorMode } = useColorMode();
   const borderColor = { light: "gray.200", dark: "gray.600" };
   const headerColor = { light: "gray.100", dark: "gray.600" };
+  const fontColor = { light: "black", dark: "#D4D4D4" };
 
   return (
     <Flex
@@ -56,7 +57,13 @@ export const SeparatorContainer = ({
           />
         )}
       </Flex>
-      <Flex h="100%" w="100%" direction={"column"} {...rest}>
+      <Flex
+        color={fontColor[colorMode]}
+        h="100%"
+        w="100%"
+        direction={"column"}
+        {...rest}
+      >
         {children}
       </Flex>
     </Flex>
